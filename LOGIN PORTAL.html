@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LOGIN PORTAL</title>
+  <style>
+    body {
+      background-image: url("https://static.vecteezy.com/system/resources/previews/006/852/804/original/abstract-blue-background-simple-design-for-your-website-free-vector.jpg");
+      font-family: Cascadia code, Arial;
+    }
+    
+    .container {
+      text-align: left;
+    width: 100%;
+      padding: 100px;
+      border-radius: 2em;
+      box-shadow: 2px 2px 4px black;
+    }
+    
+    h2 {
+      text-align: left;
+      margin-bottom: 10px;
+      test-transform: capitalize;
+      font-size: 30px;
+      color: white;
+    }
+    
+    .form-group {
+      margin-bottom: 60px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 10px;
+      font-size: 21px;
+      color: pink;	
+    }
+    
+    .form-group input {
+      width: 75%;
+      padding: 10px;
+      border: 1px solid white;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    
+    .form-group input[type="submit"] {
+      background-color: black;
+      color: white;
+      cursor: pointer;
+    }
+    
+    .form-group input[type="submit"]:hover {
+      background-color: gold;
+    }
+    
+    .form-group .forgot-password {
+      text-align: center;
+      font-size: 12px;
+    }
+    
+    .error-message {
+      color: red;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+    a{
+      color: black;
+    }
+  </style>
+  <script>
+    function validateForm() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var errorMessage = document.getElementById('error-message');
+      
+      errorMessage.textContent = '';
+      
+      if (username.trim() === '') {
+        errorMessage.textContent = 'Username required';
+        return false;
+      }
+      
+      if (password.trim() === '') {
+        errorMessage.textContent = 'Password required';
+        return false;
+      }
+      alert('Login successful!');
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h2>Login Portal</h2><br><br>
+    <form onsubmit="return validateForm()">
+      <div class="form-group">
+        <label for="username">Username</label><br>
+        <input type="text" id="username" placeholder="Enter your username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label><br>
+        <input type="password" id="password" placeholder="Enter your password">
+      </div>
+      <div class="form-group">
+        <input type="submit" value="Login">
+      </div>
+      <div class="form-group forgot-password">
+        <a href="#">Forgot password?</a>
+      </div>
+      <div id="error-message" class="error-message"></div>
+    </form>
+  </div>
+</body>
+</html>
